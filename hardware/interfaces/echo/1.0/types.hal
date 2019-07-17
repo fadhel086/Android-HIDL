@@ -1,0 +1,6 @@
+package android.hardware.echo@1.0;
+
+enum Status : int32_t {
+     Stat_SUCCESS,
+     Stat_FAILED,
+};

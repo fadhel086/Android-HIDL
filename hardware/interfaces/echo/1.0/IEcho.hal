@@ -1,0 +1,6 @@
+package android.hardware.echo@1.0;
+
+interface IEcho {
+
+	  echo(string word) generates (string echo_word);
+};

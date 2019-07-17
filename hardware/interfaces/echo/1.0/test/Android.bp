@@ -1,0 +1,16 @@
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "echo_client",
+    proprietary: true,
+    srcs: ["echoTest.cpp"],
+
+    shared_libs: [
+        "liblog",
+	"libhardware",
+	"libhidlbase",
+	"libhidltransport",
+	"libutils",
+	"android.hardware.echo@1.0",
+    ],
+}
