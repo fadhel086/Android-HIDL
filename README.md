@@ -64,7 +64,7 @@ out/target/product/generic_x86_64/vendor/etc/init/android.hardware.echo@1.0-serv
    * lshal | grep echo; will list the echo service
    * ps -A | grep echo; will show the service is up and running
    * ./vendor/bin/hw/echo_client "MESSAGE TO BE ECHOED"
-     ECHO_HAL:MESSAGE TO BE ECHOED
+   * ECHO_HAL:MESSAGE TO BE ECHOED
      
 References:
 
