@@ -1,0 +1,3 @@
+allow init tmpfs:lnk_file create_file_perms;
+allow init vendor_file:file { execute };
+allow init su:process { transition };
