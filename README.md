@@ -38,7 +38,9 @@ Pre-requisite:
 
 view the output inside;
 out/target/product/generic_x86_64/system/lib64/android.hardware.echo@1.0.so
+
 out/target/product/generic_x86_64/vendor/lib64/hw/android.hardware.echo@1.0-impl.so
+
 out/target/product/generic_x86_64/vendor/etc/init/android.hardware.echo@1.0-service.rc
 
 
