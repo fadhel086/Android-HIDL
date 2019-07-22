@@ -5,16 +5,17 @@ Objective:
 
 
 Pre-requisite:
-
+```
 * Official Android Pie sources
 * source build/envsetup.sh
 * lunch aosp_x86_64-eng
 * run emulator and see it's working.
 * make hidl-gen to build hidl-gen tool
+```
 
+1)Create the Interface and interface files.
 
-1) Create the Interface and interface files.
-
+```
    * mkdir -p hardware/interfaces/echo/1.0
    * create the interface file IEcho.hal
    * with hal file created, hidl-gen tool can automatically create the .h and ,cpp file for us
@@ -42,32 +43,36 @@ out/target/product/generic_x86_64/system/lib64/android.hardware.echo@1.0.so
 out/target/product/generic_x86_64/vendor/lib64/hw/android.hardware.echo@1.0-impl.so
 
 out/target/product/generic_x86_64/vendor/etc/init/android.hardware.echo@1.0-service.rc
+```
 
+2)Update the manifest file
 
-2)
-
+```
    * Update the manifest file, to indicate passthrough or hwbinder mode. here we are implementing hwbinder method.
    * update init.te, otherwise init won't be allowed to start the echo service.
 	  (ps -A won't list the service)
+````
 
-3)
+3)Create Test Application
+```
     * Create a test application (echoTest.cpp and Android.bp file)
     * ./hardware/interfaces/update-makefiles.sh
     * mmm hardware/interfaces/echo/1.0
     * Above will load the application to out/target/product/generic_x86_64/vendor/bin/hw/echo_client
-
+```
 4) Build the entire sources and run the emulator
-
+```
    * m
    * emulator
-
+```
 5) Test the application
-
+```
    * lshal | grep echo; will list the echo service
    * ps -A | grep echo; will show the service is up and running
    * ./vendor/bin/hw/echo_client "MESSAGE TO BE ECHOED"
    * ECHO_HAL:MESSAGE TO BE ECHOED
-     
+```
+
 References:
 
 * https://www.youtube.com/watch?v=UFaWqdxBW4E
